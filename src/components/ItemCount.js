@@ -21,7 +21,7 @@ const ItemCount = ({ stock, inicial }) => {
     }
   }
 
-  const [clicks, setClicks] = React.useState(1);
+  const [clicks, setClicks] = React.useState(inicial);
 
   return (
     <ButtonGroup aria-label="Basic example">

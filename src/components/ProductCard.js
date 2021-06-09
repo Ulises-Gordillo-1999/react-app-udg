@@ -19,7 +19,7 @@ function ProductCard(){
                 additional content. This content is a little bit longer.
             </Card.Text>
             </Card.Body>
-            <ItemCount stock="10" inicial="1"/>
+            <ItemCount stock={10} inicial={1}/>
             <Card.Footer>
             <Button variant="primary" size="lg" block>AGREGAR AL CARRITO</Button>
             </Card.Footer>
@@ -33,7 +33,7 @@ function ProductCard(){
                 content.{' '}
             </Card.Text>
             </Card.Body>
-            <ItemCount stock="10" inicial="1"/>
+            <ItemCount stock={10} inicial={1}/>
             <Card.Footer>
             <Button variant="primary" size="lg" block>AGREGAR AL CARRITO</Button>
             </Card.Footer>
@@ -48,7 +48,7 @@ function ProductCard(){
                 show that equal height action.
             </Card.Text>
             </Card.Body>
-            <ItemCount stock="10" inicial="1"/>
+            <ItemCount stock={10} inicial={1}/>
             <Card.Footer>
             <Button variant="primary" size="lg" block>AGREGAR AL CARRITO</Button>
             </Card.Footer>
@@ -62,7 +62,7 @@ function ProductCard(){
                 additional content. This content is a little bit longer.
             </Card.Text>
             </Card.Body>
-            <ItemCount stock="10" inicial="1"/>
+            <ItemCount stock={10} inicial={1}/>
             <Card.Footer>
             <Button variant="primary" size="lg" block>AGREGAR AL CARRITO</Button>
             </Card.Footer>
