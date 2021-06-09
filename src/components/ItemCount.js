@@ -8,14 +8,14 @@ import resta from '../assets/restar.png';
 const ItemCount = ({ stock, inicial }) => {
   function Incrementar() {
     if (clicks < stock) {
-      setClicks(clicks + 1);
+      setClicks(clicks + inicial);
     } else {
       setClicks(clicks);
     }
   }
   function Decrementar() {
     if (clicks > inicial) {
-      setClicks(clicks - 1);
+      setClicks(clicks - inicial);
     } else {
       setClicks(clicks);
     }
