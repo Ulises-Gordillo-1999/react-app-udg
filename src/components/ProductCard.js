@@ -1,10 +1,11 @@
-import react from 'react'
-import {Card,CardDeck} from 'react-bootstrap';
+import React from 'react'
+import ItemCount from './ItemCount';
+import {ButtonGroup,Card,CardDeck} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button'
-import image from './Roma.jpg';
-import image1 from './Barcelona.jpg';
-import image2 from './kioto_japon.jpeg';
-import image3 from './chiangmai.jpg';
+import image from '../assets/Roma.jpg';
+import image1 from '../assets/Barcelona.jpg';
+import image2 from '../assets/kioto_japon.jpeg';
+import image3 from '../assets/chiangmai.jpg';
 
 function ProductCard(){
     return( 
@@ -18,6 +19,7 @@ function ProductCard(){
                 additional content. This content is a little bit longer.
             </Card.Text>
             </Card.Body>
+            <ItemCount stock="10" inicial="1"/>
             <Card.Footer>
             <Button variant="primary" size="lg" block>AGREGAR AL CARRITO</Button>
             </Card.Footer>
@@ -31,6 +33,7 @@ function ProductCard(){
                 content.{' '}
             </Card.Text>
             </Card.Body>
+            <ItemCount stock="10" inicial="1"/>
             <Card.Footer>
             <Button variant="primary" size="lg" block>AGREGAR AL CARRITO</Button>
             </Card.Footer>
@@ -45,6 +48,7 @@ function ProductCard(){
                 show that equal height action.
             </Card.Text>
             </Card.Body>
+            <ItemCount stock="10" inicial="1"/>
             <Card.Footer>
             <Button variant="primary" size="lg" block>AGREGAR AL CARRITO</Button>
             </Card.Footer>
@@ -58,6 +62,7 @@ function ProductCard(){
                 additional content. This content is a little bit longer.
             </Card.Text>
             </Card.Body>
+            <ItemCount stock="10" inicial="1"/>
             <Card.Footer>
             <Button variant="primary" size="lg" block>AGREGAR AL CARRITO</Button>
             </Card.Footer>
