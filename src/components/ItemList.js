@@ -4,7 +4,7 @@ import Viaje from "./Viaje";
 import Item from "./Item"
 
 //Importo las imagenes
-import image from "../assets/Roma.jpg";
+import image0 from "../assets/Roma.jpg";
 import image1 from "../assets/Barcelona.jpg";
 import image2 from "../assets/kioto_japon.jpeg";
 import image3 from "../assets/chiangmai.jpg";
@@ -15,7 +15,7 @@ function ItemList() {
     {
       id: "V-01",
       name: "Roma, Italia",
-      image: image,
+      image: image0,
       stock: 8,
       description:
         "Lorem ipsum dolor sit, amet consectetur adipiscing, elit id.",
@@ -84,7 +84,6 @@ function ItemList() {
 
   return (
     <div>
-      <h3 style={{ color: "white" }}>Viajes prueba</h3>
       {viajes.map((viaje) => (
         <Viaje
           key={viaje.id}
@@ -102,7 +101,9 @@ function ItemList() {
             <Item
             name={props.name}
             description={props.description}
+            image={props.image}
             stock={props.stock}
+            precio={props.precio}
             >
             </Item>
             <hr/>
