@@ -1,0 +1,17 @@
+.containerviaje {
+    display: inline-block;
+    align-items: center;
+    align-content: center;
+    margin: 20px;
+    padding: 20px;
+}
+.productcard {
+    text-align: center;
+    justify-content: space-around;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-width: 5px !important;
+    border-color: rgb(6, 8, 8) !important;
+    border-style: solid !important;
+    width: 19rem;
+    height: 29rem;
+}

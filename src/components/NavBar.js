@@ -1,5 +1,6 @@
 import React from 'react';
 import CartWidget from './CartWidget';
+import Cart from './Cart'
 import { Navbar,Nav,NavDropdown } from 'react-bootstrap';
 
 export default function NavBar() {
@@ -21,10 +22,6 @@ export default function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-            Others
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
