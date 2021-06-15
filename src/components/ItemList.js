@@ -54,30 +54,25 @@ function ItemList() {
   function getCartItems() {
     let miPromesa = new Promise((resolve, reject) => {  
     setTimeout(function(){
-      //"mock" de errores, lo dejamos afuera por ahora
-      //const error = Math.random() > 0.85;
       const error = false;
       if(!error){      
         resolve(viajes);  
       }
-      //si llegamos a esta intancia, significa que tuvimos un error,por eso "rechazamos" (reject) la promesa.
+      
       reject("Error obteniendo los datos :(");
       }, 
       2000);
     });  
   
-    //una vez resuelta la promesa... 
     miPromesa.then( function(valor){
-      //actualizamos el state
+   
       setProductos(viajes);
     }).catch(
       function(error){
         console.log(error);
     }).finally(
         function(){
-          // se ejecuta siempre que termina la Promesa, 
-          //tanto si es "resolve" o "rejected"
-          //alert('Promesa terminada')
+          alert('Promesa terminada')
       }
     )
   }
@@ -96,7 +91,6 @@ function ItemList() {
       </button>
       <div class="container">
         {productos.map( (props)=> (
-            //en cada iteración del array, renedrizamos un componente, pasandole además las props que necesitemos
             <>
             <Item
             name={props.name}
