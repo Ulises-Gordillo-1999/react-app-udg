@@ -1,7 +1,4 @@
-.container {
-    display: -moz-grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
+.item-card {
+    font-family:'Times New Roman', Times, serif;
+    color: black;
 }

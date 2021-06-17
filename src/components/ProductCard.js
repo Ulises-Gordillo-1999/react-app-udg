@@ -1,8 +1,8 @@
-import React from "react";
-import ItemCount from "./ItemCount";
-import { Card } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
-import "./ProductCard.css"
+import React from 'react';
+import ItemCount from  './ItemCount';
+import { Card } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import  './ProductCard.css'
 
 function ProductCard(props) {
   return (

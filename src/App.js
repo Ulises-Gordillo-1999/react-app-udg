@@ -1,14 +1,16 @@
 //import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
+//import NavBar from './components/NavBar';
+import ItemListContainer from "./components/ItemListContainer";
+import FetchPokeApi from "./components/FetchPokeApi";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div>
-      <NavBar/>
-      <ItemListContainer greeting="Hola react"/>
+      {/*<NavBar/>*/}
+      <ItemListContainer greeting="Hola react" />
+      <FetchPokeApi />
     </div>
   );
 }

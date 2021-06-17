@@ -1,16 +1,24 @@
 import React from "react";
-import './Item.css';
+import "./Item.css";
+
+//Bootstrap
+import Card from "react-bootstrap/Card";
+
 function Item(props) {
   return (
-    <div id={props.id} className="container">
-      <img src={props.image} width="700" height="240"></img>
-      <div className="circleUi" />
-      <h3>{props.name} <hr></hr> ${props.precio}</h3>
-      <p className="description">{props.description}</p>
-      <p>
-        <small>Nos quedan {props.stock} unidades</small>
-      </p>
-    </div>
+    <Card className="item-card">
+      <Card.Img variant="top" src={props.image} />
+      <Card.Body>
+        <Card.Title>
+          {props.name} <hr></hr> $ {props.precio}
+        </Card.Title>
+        <Card.Text>
+          {props.description}
+          <hr></hr>
+          Nos quedan {props.stock} unidades disponibles
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
 

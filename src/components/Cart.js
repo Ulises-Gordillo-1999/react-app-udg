@@ -1,8 +1,8 @@
-import React from "react";
-import "./Cart.css";
+import React from 'react';
+import './Cart.css';
 import logo from '../assets/carrito-de-compras.png';
 //Importo el componente viaje
-import Viaje from "./Viaje";
+import Viaje from './Viaje';
 
 const Cart = ({ cart, setCart }) => {
   return (
