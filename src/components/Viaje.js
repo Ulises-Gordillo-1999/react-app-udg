@@ -1,11 +1,12 @@
-import React from "react";
-import ItemCount from "./ItemCount";
-import ModalDetails from "./ModalDetails";
-import "./Viaje.css";
-import { Card } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
+import React from 'react';
+import ItemCount from './ItemCount';
+import ModalDetails from './ModalDetails'
+import  './Viaje.css';
+import { Card } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 const Viaje = ({ viaje, cart, setCart, viajes }) => {
+
   //constante que guarda las propiedades del estado de los viajes
   const { name, precio, id, description, image } = viajes;
 
@@ -18,8 +19,9 @@ const Viaje = ({ viaje, cart, setCart, viajes }) => {
         </Card.Title>
         <Card.Text>{description}</Card.Text>
         <hr></hr>
-        {/*<ModalDetails/>
-        <hr></hr> */}
+        <ModalDetails
+        viajes={viajes}/>
+        <hr></hr> 
         <ItemCount stock={10} inicial={1} />
         <hr></hr>
         <Button

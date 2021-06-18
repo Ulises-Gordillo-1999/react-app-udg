@@ -1,20 +1,23 @@
 import React from 'react'
-//Bootstrap
-import Modal from 'react-bootstrap/Modal'
-import ModalDialog from 'react-bootstrap/ModalDialog'
-import ModalHeader from 'react-bootstrap/ModalHeader'
-import ModalTitle from 'react-bootstrap/ModalTitle'
-import ModalBody from 'react-bootstrap/ModalBody'
-import ModalFooter from 'react-bootstrap/ModalFooter'
-import Button from 'react-bootstrap/Button';
 
-function ModalDetails() {
+//Bootstrap
+import Button from 'react-bootstrap/Button';
+import ModalDetailsItem from './ModalDetailsItem'
+
+const ModalDetails = ({viajes}) => {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <div>
-      
+      <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
+        See product detail
+      </Button>
+      <ModalDetailsItem
+        viajes={viajes}
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </div>
   )
 }
 
 export default ModalDetails
-
