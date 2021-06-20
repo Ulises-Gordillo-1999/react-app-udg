@@ -25,11 +25,11 @@ const ItemCount = ({ stock, inicial }) => {
 
   return (
     <ButtonGroup aria-label="Basic example">
-      <Button variant="outline-primary" onClick={Decrementar}>
+      <Button variant="outline-info" onClick={Decrementar}>
         <img src={resta} width="30" height="30"></img>
       </Button>
       <label id="labelItemcount">{clicks}</label>
-      <Button variant="outline-primary" onClick={Incrementar}>
+      <Button variant="outline-info" onClick={Incrementar}>
         <img src={suma} width="30" height="30"></img>
       </Button>
     </ButtonGroup>

@@ -25,7 +25,7 @@ const Viaje = ({ viaje, cart, setCart, viajes }) => {
         <ItemCount stock={10} inicial={1} />
         <hr></hr>
         <Button
-          variant="primary"
+          variant="info"
           size="lg"
           block
           type="button" /*onClick={() => addViaje(id)}*/
