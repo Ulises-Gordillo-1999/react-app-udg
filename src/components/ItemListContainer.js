@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import ItemDetailContainer from "./ItemDetailContainer";
 import ItemList from "./ItemList";
-import NavBar from "./NavBar";
+//import NavBar from "./NavBar";
 
 //Bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+//import Col from "react-bootstrap/Col";
 
 //Importo las imagenes
 import image0 from "../assets/Roma.jpg";
 import image1 from "../assets/Barcelona.jpg";
 import image2 from "../assets/kioto_japon.jpeg";
 import image3 from "../assets/chiangmai.jpg";
+//imagenes modal
+import img0 from '../assets/Roma_modal.jpg'
+import img1 from '../assets/Barcelona_modal.jpg'
+import img2 from '../assets/Kioto_modal.jpg'
+import img3 from '../assets/ChiangMai_modal.jpg'
 
 function ItemListContainer(props) {
   const [viajes, setViajes] = useState([
@@ -20,6 +25,7 @@ function ItemListContainer(props) {
       id: "V-01",
       name: "Roma, Italia",
       image: image0,
+      img: img0,
       stock: 8,
       description:
         "Lorem ipsum dolor sit, amet consectetur adipiscing, elit id.",
@@ -29,6 +35,7 @@ function ItemListContainer(props) {
       id: "V-02",
       name: "Barcelona, España",
       image: image1,
+      img: img1,
       stock: 3,
       description:
         "Lorem ipsum dolor sit, amet consectetur adipiscing, elit id.",
@@ -38,6 +45,7 @@ function ItemListContainer(props) {
       id: "V-03",
       name: "Kioto, Japon",
       image: image2,
+      img: img2,
       stock: 9,
       description:
         "Lorem ipsum dolor sit, amet consectetur adipiscing, elit id.",
@@ -47,6 +55,7 @@ function ItemListContainer(props) {
       id: "V-04",
       name: "Chiang Mai, Tailandia",
       image: image3,
+      img: img3,
       stock: 5,
       description:
         "Lorem ipsum dolor sit, amet consectetur adipiscing, elit id.",
@@ -54,22 +63,11 @@ function ItemListContainer(props) {
     },
   ]);
   return (
-    <div>
-      <NavBar />
-      <Container fluid>
-        <h1 style={{ color: "white", textAlign: "center" }}>
-          {" "}
-          {props.greeting}{" "}
-          <h2>Ver consola FetchPokeApi</h2>
-        </h1>
-        <Row>
-          <ItemList viajes={viajes} />
-        </Row>
-        <Row>
-          <ItemDetailContainer viajes={viajes} />
-        </Row>
-      </Container>
-    </div>
+    <Container fluid>
+      <Row>
+        <ItemList viajes={viajes} />
+      </Row>
+    </Container>
   );
 }
 

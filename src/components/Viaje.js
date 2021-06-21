@@ -17,7 +17,7 @@ const Viaje = ({ viaje, cart, setCart, viajes }) => {
         <Card.Title>
           {name} <hr></hr> $ {precio}
         </Card.Title>
-        <Card.Text>{description}</Card.Text>
+        
         <hr></hr>
         <ModalDetails
         viajes={viajes}/>

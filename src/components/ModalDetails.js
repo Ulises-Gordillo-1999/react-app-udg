@@ -15,6 +15,7 @@ const ModalDetails = ({viajes}) => {
         viajes={viajes}
         show={modalShow}
         onHide={() => setModalShow(false)}
+        
       />
     </div>
   )

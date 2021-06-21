@@ -3,12 +3,13 @@ import Item from "./Item";
 
 //Bootstrap
 import Container from "react-bootstrap/Container";
+import CardDeck from 'react-bootstrap/CardDeck'
 import CardGroup from "react-bootstrap/CardGroup";
 
 const ItemDetailContainer = ({ viajes }) => {
-  const [productos, setProductos] = useState([]);
+  /*const [productos, setProductos] = useState([]);
 
-  function getCartItems() {
+   function getCartItems() {
     let miPromesa = new Promise((resolve, reject) => {
       setTimeout(function () {
         const error = false;
@@ -30,17 +31,18 @@ const ItemDetailContainer = ({ viajes }) => {
       .finally(function () {
         //alert("Promesa terminada");
       });
-  }
+  }*/
   return (
     <Container>
-      <button className="btn btn-primary" onClick={getCartItems}>
+      {/*<button className="btn btn-primary" onClick={getCartItems}>
         See Product Details
-      </button>
+      </button> */}
       <Container className="detail-container">
-        <CardGroup>
-          {productos.map((props) => (
+        <CardDeck>
+          {viajes.map((props) => (
             <>
               <Item
+                
                 name={props.name}
                 description={props.description}
                 image={props.image}
@@ -50,7 +52,7 @@ const ItemDetailContainer = ({ viajes }) => {
               <hr />
             </>
           ))}
-        </CardGroup>
+        </CardDeck>
       </Container>
     </Container>
   );

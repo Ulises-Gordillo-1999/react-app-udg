@@ -10,10 +10,11 @@ function ModalDetailsItem(props) {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className="modal"
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-        <Image src={props.viajes.image} fluid />
+        <Image src={props.viajes.img} fluid />
           <hr></hr>
           {props.viajes.name}
         </Modal.Title>
@@ -23,8 +24,6 @@ function ModalDetailsItem(props) {
         <p>
           {props.viajes.description}
         </p>
-        <hr></hr>
-        <h4> Nos quedan {props.viajes.stock} unidades disponibles</h4>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
