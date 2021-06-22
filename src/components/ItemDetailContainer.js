@@ -11,16 +11,10 @@ const ItemDetailContainer = ({ viajes }) => {
   const [products, setProducts] = useState();
   return (
     <Container>
-      <Button
-        variant="info"
-        size="lg"
-        block
-        type="button"
-        onClick=""
-      >
+      <Button variant="info" size="lg" blocktype="button" onClick={() => setProducts()} >
         See Product Details
       </Button>
-      <Container className="detail-container"> {/* <ItemDetail />} */}</Container>
+      {/*<ItemDetail />  */}
     </Container>
   );
 };
