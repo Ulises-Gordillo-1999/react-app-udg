@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import ItemListContainer from "../components/ItemListContainer";
+import NavBar from "../components/NavBar";
 import Home from "../pages/Home";
 import Products from "../pages/Productos";
 import About from "../pages/About";
-import NavBar from "../components/NavBar";
+//import ItemDetail from '../components/ItemDetail'
+import ItemDetailContainer from "../components/ItemDetailContainer";
 
 function AppRouter() {
   return (
@@ -15,6 +15,7 @@ function AppRouter() {
         <Route exact path="/" component={Home} />
         <Route path="/Products" component={Products} />
         <Route path="/About" component={About} />
+        {/*<Route path="/Item/:id" component={ItemDetailContainer}/> */}
       </Switch>
     </Router>
   );

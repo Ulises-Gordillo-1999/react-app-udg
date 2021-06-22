@@ -1,11 +1,12 @@
 import React from 'react';
-import ItemCount from './ItemCount';
+import ItemCount from './ItemCount'
+import ItemDetailContainer from './ItemDetailContainer';
 import ModalDetails from './ModalDetails'
 import  './Viaje.css';
 import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 
-const Viaje = ({ viaje, cart, setCart, viajes }) => {
+const Viaje = ({ viajes }) => {
 
   //constante que guarda las propiedades del estado de los viajes
   const { name, precio, id, description, image } = viajes;
@@ -24,14 +25,15 @@ const Viaje = ({ viaje, cart, setCart, viajes }) => {
         <hr></hr> 
         <ItemCount stock={10} inicial={1} />
         <hr></hr>
-        <Button
+        <ItemDetailContainer viajes={viajes} />
+        {/*<Button
           variant="info"
           size="lg"
           block
-          type="button" /*onClick={() => addViaje(id)}*/
+          type="button" onClick={() => addViaje(id)}
         >
           Agregar al carrito
-        </Button>
+        </Button> */}
       </Card.Body>
     </Card>
   );
