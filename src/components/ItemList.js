@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Viaje from "./Viaje";
-//import Cart from "./Cart";
-import { CardDeck } from "react-bootstrap";
+//import { CardDeck } from "react-bootstrap";
+import CardColumns from 'react-bootstrap/CardColumns'
 
-const ItemList = ({ viajes }) => {
+const ItemList = () => {
+  const [Products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1055")
+      .then(res => res.json())
+      .then(res => {
+        setProducts(res.results);
+        //console.log(res);
+      });
+  },[]);
+
   return (
     <div>
-      <CardDeck>
-      {viajes.map((viajes) => (
-          <Viaje key={viajes.id}  viajes={viajes} />
-      ))}
-      </CardDeck>
+      <CardColumns>    
+        {Products.map((element, index) => { return (
+           
+           <Viaje key={index} name={element.title} id={element.id} precio={element.price} stock={element.available_quantity} image={element.thumbnail} /> 
+        )
+          
+        })}
+
+      </CardColumns>
     </div>
   );
 };

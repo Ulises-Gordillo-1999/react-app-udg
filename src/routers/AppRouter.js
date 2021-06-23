@@ -15,7 +15,7 @@ function AppRouter() {
         <Route exact path="/" component={Home} />
         <Route path="/Products" component={Products} />
         <Route path="/About" component={About} />
-        {/*<Route path="/Item/:id" component={ItemDetailContainer}/> */}
+        <Route path="/:Products_id" component={ItemDetailContainer}/> 
       </Switch>
     </Router>
   );

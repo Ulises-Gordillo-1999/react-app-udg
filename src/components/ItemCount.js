@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image'
 import  './ItemCount.css';
 import suma from  '../assets/sumar.png';
 import resta from  '../assets/restar.png';
@@ -26,11 +27,11 @@ const ItemCount = ({ stock, inicial }) => {
   return (
     <ButtonGroup aria-label="Basic example">
       <Button variant="outline-info" onClick={Decrementar}>
-        <img src={resta} width="30" height="30"></img>
+        <Image src={resta} width="30" height="30"></Image>
       </Button>
       <label id="labelItemcount">{clicks}</label>
       <Button variant="outline-info" onClick={Incrementar}>
-        <img src={suma} width="30" height="30"></img>
+        <Image src={suma} width="30" height="30"></Image>
       </Button>
     </ButtonGroup>
   );

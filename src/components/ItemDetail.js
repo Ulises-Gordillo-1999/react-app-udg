@@ -3,7 +3,8 @@ import React from "react";
 //Bootstrap
 import Card from "react-bootstrap/Card";
 
-function ItemDetail() {
+const ItemDetail = ({item}) => {
+  console.log(item)
   return (
     <div>
       <h1
@@ -12,15 +13,14 @@ function ItemDetail() {
         ItemDetail
       </h1>
       <Card className="item-card">
-        <Card.Img variant="top" src="" />
+        <Card.Img variant="top" src={item.thumbnail} />
         <Card.Body>
           <Card.Title>
-             <hr></hr> $ 
+            {item.title} <hr></hr> ${item.price} 
           </Card.Title>
           <Card.Text>
-           
             <hr></hr>
-            Nos quedan  unidades disponibles
+            Nos quedan unidades {item.available_quantity} disponibles
           </Card.Text>
         </Card.Body>
       </Card>
