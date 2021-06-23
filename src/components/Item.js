@@ -1,25 +1,37 @@
 import React from "react";
+import ItemCount from "./ItemCount";
+//import ModalDetails from "./ModalDetails";
+import { Link } from "react-router-dom";
 import "./Item.css";
+import { Card } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
-//Bootstrap
-import Card from "react-bootstrap/Card";
+const Item = ({ name, price, stock, image, id }) => {
 
-function Item(props) {
   return (
-    <Card className="item-card">
-      <Card.Img variant="top" src={props.image} />
+    <Card style={{width:"22rem"}} className="productcard" id="">
+      <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>
-          {props.name} <hr></hr> $ {props.precio}
+          {name} <hr></hr> {price}
         </Card.Title>
-        <Card.Text>
-          {props.description}
-          <hr></hr>
-          Nos quedan {props.stock} unidades disponibles
-        </Card.Text>
+        <Card.Text>Nos quedan {stock} unidades disponibles</Card.Text>
+        {/*<ModalDetails  />*/}
+        <hr></hr>
+        <ItemCount stock={10} inicial={1} />
+        <hr></hr>
+        <Link to={`/${id}`}>
+          <Button
+            variant="info"
+            size="lg"
+            blocktype="button"
+          >
+            See Product Details
+          </Button>
+        </Link>
       </Card.Body>
     </Card>
   );
-}
+};
 
 export default Item;

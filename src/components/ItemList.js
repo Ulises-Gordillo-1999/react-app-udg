@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Viaje from "./Viaje";
+import Item from "./Item";
 //import { CardDeck } from "react-bootstrap";
 import CardColumns from 'react-bootstrap/CardColumns'
 
@@ -20,7 +20,7 @@ const ItemList = () => {
       <CardColumns>    
         {Products.map((element, index) => { return (
            
-           <Viaje key={index} name={element.title} id={element.id} precio={element.price} stock={element.available_quantity} image={element.thumbnail} /> 
+           <Item key={index} name={element.title} id={element.id} precio={element.price} stock={element.available_quantity} image={element.thumbnail} /> 
         )
           
         })}

@@ -29,7 +29,7 @@ const ItemCount = ({ stock, inicial }) => {
       <Button variant="outline-info" onClick={Decrementar}>
         <Image src={resta} width="30" height="30"></Image>
       </Button>
-      <label id="labelItemcount">{clicks}</label>
+      <label id="labelItemcount"> <h2>{clicks}</h2></label>
       <Button variant="outline-info" onClick={Incrementar}>
         <Image src={suma} width="30" height="30"></Image>
       </Button>

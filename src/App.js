@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <AppRouter />
-      {/*<FetchPokeApi/> */}
+      <FetchPokeApi/>
     </div>
   );
 }

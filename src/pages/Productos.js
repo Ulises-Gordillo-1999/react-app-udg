@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { Container } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image'
 import imagen from '../assets/Products.gif'
