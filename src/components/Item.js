@@ -15,10 +15,10 @@ const Item = ({ name, price, stock, image, id }) => {
         <Card.Title>
           {name} <hr></hr> {price}
         </Card.Title>
-        <Card.Text>Nos quedan {stock} unidades disponibles</Card.Text>
+        {/* <Card.Text>Nos quedan {stock} unidades disponibles</Card.Text> */}
         {/*<ModalDetails  />*/}
-        <hr></hr>
-        <ItemCount stock={10} inicial={1} />
+        {/*<hr></hr> */}
+        <ItemCount stock={stock} inicial={1} />
         <hr></hr>
         <Link to={`/${id}`}>
           <Button

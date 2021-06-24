@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button'
 //import Image from "react-bootstrap/Image";
 import Card from "react-bootstrap/Card";
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ name, id , precio, stock, image }) => {
   
   return (
     <Jumbotron fluid>
@@ -18,21 +18,21 @@ const ItemDetail = ({ item }) => {
         <h1
           style={{ color: "black", textAlign: "center", fontFamily: "cursive" }}
         >
-          {item.title}
+          {name}
         </h1>
         <Row>
           <Col>
             <Card style={{ width: "18rem" }}>
-              <Card.Img variant="top" src={item.thumbnail} />
+              <Card.Img variant="top" src={image} />
             </Card>
           </Col>
           <Col>
-            <h1>${item.price} </h1>
-            <ItemCount stock={10} inicial={1}/>
+            <h1>${precio} </h1>
+            <ItemCount stock={stock} inicial={1}/>
             <hr></hr>
             <Button variant="primary" size="lg"> Add cart</Button>
             <hr></hr>
-            <h2>Nos quedan {item.available_quantity} unidades disponibles </h2>
+            <h2>Nos quedan {stock} unidades disponibles </h2>
           </Col>
         </Row>
       </Container>

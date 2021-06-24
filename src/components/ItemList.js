@@ -4,21 +4,53 @@ import Item from "./Item";
 import CardColumns from 'react-bootstrap/CardColumns'
 
 const ItemList = () => {
-  const [Products, setProducts] = useState([]);
-
+  const [consoles, setConsoles] = useState([]);
+  const [computacion, setComputacion] = useState([]);
+  const [accesorios, setAccesorios] = useState([]);
+  
   useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1051")
-      .then(res => res.json())
-      .then(res => {
-        setProducts(res.results);
-        //console.log(res);
-      });
-  },[]);
+    getInformationCon()
+    getInformationComp()
+    getInformationAccesorios()
+  }, [])
+
+  const getInformationCon = async() => {
+    const data = await fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1144")
+    const users = await data.json()
+    console.log(users.results)
+    setConsoles(users.results)
+  }
+  const getInformationComp = async() => {
+    const data = await fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1648")
+    const users = await data.json()
+    //console.log(users.results)
+    setComputacion(users.results)
+  }
+  const getInformationAccesorios = async() => {
+    const data = await fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1039")
+    const users = await data.json()
+    //console.log(users.results)
+    setAccesorios(users.results)
+  }
+
+
+
 
   return (
-    <div>
       <CardColumns>    
-        {Products.map((element, index) => { return (
+        {consoles.map((element, index) => { return (
+           
+           <Item key={index} name={element.title} id={element.id} precio={element.price} stock={element.available_quantity} image={element.thumbnail} /> 
+        )
+          
+        })}
+        {computacion.map((element, index) => { return (
+           
+           <Item key={index} name={element.title} id={element.id} precio={element.price} stock={element.available_quantity} image={element.thumbnail} /> 
+        )
+          
+        })}
+        {accesorios.map((element, index) => { return (
            
            <Item key={index} name={element.title} id={element.id} precio={element.price} stock={element.available_quantity} image={element.thumbnail} /> 
         )
@@ -26,7 +58,6 @@ const ItemList = () => {
         })}
 
       </CardColumns>
-    </div>
   );
 };
 

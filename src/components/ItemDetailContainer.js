@@ -10,13 +10,13 @@ const ItemDetailContainer = () => {
 
   let { Products_id } = useParams();
   useEffect(() => {
-   obtenerDatos()
+    getInformation()
   }, [])
 
-const obtenerDatos = async() => {
+const getInformation = async() => {
   const data = await fetch(`https://api.mercadolibre.com/items/${Products_id}?include_attributes=all`)
   const users = await data.json()
-  console.log(users)
+  //console.log(users)
   setItem(users)
 }
 
@@ -35,7 +35,7 @@ const obtenerDatos = async() => {
     <Container>
       {item !== null ? (
         
-        <ItemDetail item={item} />
+        <ItemDetail name={item.title} id={item.id} precio={item.price} stock={item.available_quantity} image={item.thumbnail} />
       ) : (
         <p>cargando</p>
       )}
