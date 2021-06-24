@@ -13,7 +13,7 @@ function Computing() {
     );
     const users = await data.json();
     console.log(users.results);
-    setComputacion(users.results);
+    //setComputacion(users.results);
   };
 
   return (

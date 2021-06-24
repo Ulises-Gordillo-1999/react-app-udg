@@ -17,7 +17,7 @@ const ItemList = () => {
   const getInformationCon = async() => {
     const data = await fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1144")
     const users = await data.json()
-    console.log(users.results)
+    //console.log(users.results)
     setConsoles(users.results)
   }
   const getInformationComp = async() => {
