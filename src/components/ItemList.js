@@ -7,7 +7,7 @@ const ItemList = () => {
   const [Products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1055")
+    fetch("https://api.mercadolibre.com/sites/MLA/search?category=MLA1051")
       .then(res => res.json())
       .then(res => {
         setProducts(res.results);
