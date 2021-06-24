@@ -9,7 +9,7 @@ function ItemListContainer() {
   return (
     <Container fluid>
       <Row>
-        <ItemList  />
+        <ItemList />
       </Row>
     </Container>
   );

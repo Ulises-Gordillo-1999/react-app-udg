@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import CardColumns from "react-bootstrap/CardColumns";
 import Item from "./Item";
 
@@ -12,8 +12,8 @@ function Computing() {
       "https://api.mercadolibre.com/sites/MLA/search?category=MLA1648"
     );
     const users = await data.json();
-    console.log(users.results);
-    //setComputacion(users.results);
+    //console.log(users.results);
+    setComputacion(users.results);
   };
 
   return (

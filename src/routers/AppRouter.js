@@ -18,10 +18,14 @@ function AppRouter() {
         <Route exact path="/" component={Home} />
         <Route exact path="/Products" component={Products} />
         <Route exact path="/About" component={About} />
-        <Route exact path="/:Products_id" component={ItemDetailContainer}/>
+        <Route exact path="/:Products_id" component={ItemDetailContainer} />
         <Route exact path="/:Categories/consoles" component={Consoles} />
         <Route exact path="/:Categories/computing" component={Computing} />
-        <Route exact path="/:Categories/cameras_accessories" component={Cameras_accessories} /> 
+        <Route
+          exact
+          path="/:Categories/cameras_accessories"
+          component={Cameras_accessories}
+        />
       </Switch>
     </Router>
   );

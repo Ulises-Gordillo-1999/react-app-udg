@@ -10,32 +10,28 @@ const ItemDetailContainer = () => {
 
   let { Products_id } = useParams();
   useEffect(() => {
-    getInformation()
-  }, [])
+    getInformation();
+  }, []);
 
-const getInformation = async() => {
-  const data = await fetch(`https://api.mercadolibre.com/items/${Products_id}?include_attributes=all`)
-  const users = await data.json()
-  //console.log(users)
-  setItem(users)
-}
-
-  /*useEffect(() => {
-    fetch(
+  const getInformation = async () => {
+    const data = await fetch(
       `https://api.mercadolibre.com/items/${Products_id}?include_attributes=all`
-    )
-      .then((res) => res.json())
-      .then((res) => {
-        setItem(res);
-        console.log(res)
-      });
-  }, []);*/
+    );
+    const users = await data.json();
+    //console.log(users)
+    setItem(users);
+  };
 
   return (
     <Container>
       {item !== null ? (
-        
-        <ItemDetail name={item.title} id={item.id} precio={item.price} stock={item.available_quantity} image={item.thumbnail} />
+        <ItemDetail
+          name={item.title}
+          id={item.id}
+          precio={item.price}
+          stock={item.available_quantity}
+          image={item.thumbnail}
+        />
       ) : (
         <p>cargando</p>
       )}
