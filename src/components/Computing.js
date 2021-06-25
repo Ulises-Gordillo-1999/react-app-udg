@@ -21,7 +21,7 @@ function Computing() {
       <div className="row">
         {computacion.map((element, index) => {
           return (
-            <div className="col-md-4" key={element.id}>
+            <div className="col-sm-3" key={element.id}>
               <Item
                 key={index}
                 name={element.title}

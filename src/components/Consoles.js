@@ -15,11 +15,11 @@ function Consoles() {
     setConsoles(users.results);
   };
   return (
-    <div className="container d-flex justify-content-center align-items-center h100">
+    <div className="container d-flex justify-content-center align-items-center ">
       <div className="row">
         {consoles.map((element, index) => {
           return (
-            <div className="col-md-4" key={element.id}>
+            <div className="col-sm-3" key={element.id}>
               <Item
                 key={index}
                 name={element.title}
