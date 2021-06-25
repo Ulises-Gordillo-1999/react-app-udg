@@ -14,16 +14,16 @@ const ItemDetail = ({ name, id, precio, stock, image }) => {
   };
 
   return (
-    <div class="card mb-3" style={{ width: "540rem", height: "38rem" }}>
-      <div class="row no-gutters">
-        <div class="col-md-4">
+    <div className="card mb-3" style={{ width: "540rem", height: "38rem" }}>
+      <div className="row no-gutters">
+        <div className="col-md-4">
           <img src={image} alt="..." width="400" height="600" />
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h1 class="card-title"> {name} </h1>
-            <h2 class="card-title"> ${precio} </h2>
-            <h4 class="card-text">
+        <div className="col-md-8">
+          <div className="card-body">
+            <h1 className="card-title"> {name} </h1>
+            <h2 className="card-title"> ${precio} </h2>
+            <h4 className="card-text">
               Unidades disponibles {stock}
             </h4>
             <br></br>
