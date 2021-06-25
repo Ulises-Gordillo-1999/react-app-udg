@@ -1,13 +1,12 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 //import ItemCount from "./ItemCount";
 //import ModalDetails from "./ModalDetails";
 import { Link } from "react-router-dom";
 import "./Item.css";
-//import Button from "react-bootstrap/Button";
-import Spinner from 'react-bootstrap/Spinner'
+import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 
 const Item = ({ name, precio, stock, image, id }) => {
-
   return (
     <div className="card text-center border-secondary h-100 animate__animated animate__backInUp ">
       <img src={image} className="card-img-top" />
@@ -15,7 +14,9 @@ const Item = ({ name, precio, stock, image, id }) => {
         <h5 className="card-title"> ${name} </h5>
         <h5 className="card-title"> ${precio} </h5>
         <Link to={`/${id}`}>
-        <a  class="btn btn-info btn-lg btn-block">See Product Details</a>
+          <a class="btn btn-info btn-lg " href="#" role="button">
+            See Product Details
+          </a>
         </Link>
       </div>
     </div>
