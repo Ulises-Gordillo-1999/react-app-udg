@@ -18,9 +18,11 @@ function Cameras_accessories() {
   };
 
   return (
-    <CardColumns>
+    <div className="container d-flex justify-content-center align-items-center h100">
+      <div className="row">
       {accesorios.map((element, index) => {
         return (
+          <div className="col-md-4" key={element.id}>
           <Item
             key={index}
             name={element.title}
@@ -29,9 +31,11 @@ function Cameras_accessories() {
             stock={element.available_quantity}
             image={element.thumbnail}
           />
+          </div>
         );
       })}
-    </CardColumns>
+      </div>
+    </div>
   );
 }
 

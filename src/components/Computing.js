@@ -17,20 +17,24 @@ function Computing() {
   };
 
   return (
-    <CardColumns>
-      {computacion.map((element, index) => {
-        return (
-          <Item
-            key={index}
-            name={element.title}
-            id={element.id}
-            precio={element.price}
-            stock={element.available_quantity}
-            image={element.thumbnail}
-          />
-        );
-      })}
-    </CardColumns>
+    <div className="container d-flex justify-content-center align-items-center h100">
+      <div className="row">
+        {computacion.map((element, index) => {
+          return (
+            <div className="col-md-4" key={element.id}>
+              <Item
+                key={index}
+                name={element.title}
+                id={element.id}
+                precio={element.price}
+                stock={element.available_quantity}
+                image={element.thumbnail}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 

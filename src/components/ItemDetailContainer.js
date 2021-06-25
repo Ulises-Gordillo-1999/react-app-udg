@@ -23,7 +23,8 @@ const ItemDetailContainer = () => {
   };
 
   return (
-    <Container>
+    <div className="container">
+      <div class="row justify-content-center">
       {item !== null ? (
         <ItemDetail
           name={item.title}
@@ -35,7 +36,8 @@ const ItemDetailContainer = () => {
       ) : (
         <p>cargando</p>
       )}
-    </Container>
+      </div>
+    </div>
   );
 };
 

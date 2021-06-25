@@ -1,5 +1,6 @@
 import React from "react";
 import ItemListContainer from "../components/ItemListContainer";
+import image from '../assets/home.gif'
 
 //Bootstrap
 import Container from "react-bootstrap/Container";
@@ -9,14 +10,10 @@ import Container from "react-bootstrap/Container";
 
 function Home() {
   return (
-    <Container fluid>
-      <h1
-        style={{ color: "white", textAlign: "center", fontFamily: "cursive" }}
-      >
-        Home
-      </h1>
+    <div className="container">
+      <img src={image} className="animate__animated animate__hinge" />
       <ItemListContainer />
-    </Container>
+    </div>
   );
 }
 

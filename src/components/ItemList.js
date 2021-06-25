@@ -40,9 +40,11 @@ const ItemList = () => {
   };
 
   return (
-    <CardColumns>
+    <div className="row">
+      
       {consoles.map((element, index) => {
         return (
+          <div className="col-md-4" key={element.id}>
           <Item
             key={index}
             name={element.title}
@@ -51,10 +53,12 @@ const ItemList = () => {
             stock={element.available_quantity}
             image={element.thumbnail}
           />
+          </div>
         );
       })}
       {computacion.map((element, index) => {
         return (
+          <div className="col-md-4" key={element.id}>
           <Item
             key={index}
             name={element.title}
@@ -63,10 +67,12 @@ const ItemList = () => {
             stock={element.available_quantity}
             image={element.thumbnail}
           />
+           </div>
         );
       })}
       {accesorios.map((element, index) => {
         return (
+          <div className="col-md-4" key={element.id}>
           <Item
             key={index}
             name={element.title}
@@ -75,9 +81,10 @@ const ItemList = () => {
             stock={element.available_quantity}
             image={element.thumbnail}
           />
+          </div>
         );
       })}
-    </CardColumns>
+    </div>
   );
 };
 

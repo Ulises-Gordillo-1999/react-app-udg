@@ -1,15 +1,14 @@
-import React from 'react'
-import { Container } from 'react-bootstrap';
-import Image from 'react-bootstrap/Image'
-import imagen from '../assets/Products.gif'
-
+import React from "react";
+import { Container } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
+import imagen from "../assets/Products.gif";
 
 function Productos() {
-    return (
-        <Container >
-          <Image src={imagen} />
-        </Container>
-    )
+  return (
+    <div className="container">
+      <Image src={imagen} className="animate__animated animate__bounceInUp" />
+    </div>
+  );
 }
 
-export default Productos
+export default Productos;

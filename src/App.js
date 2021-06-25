@@ -1,7 +1,7 @@
 import "./App.css";
 import FetchPokeApi from "./components/FetchPokeApi";
 import AppRouter from "./routers/AppRouter";
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
