@@ -21,13 +21,12 @@ const ItemDetail = ({ name, id, precio, stock, image }) => {
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title"> {name} </h5>
-            <h5 class="card-title"> ${precio} </h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
+            <h1 class="card-title"> {name} </h1>
+            <h2 class="card-title"> ${precio} </h2>
+            <h4 class="card-text">
+              Unidades disponibles {stock}
+            </h4>
+            <br></br>
             {amount === 0 ? (
               <ItemCount onAdd={onAdd} stock={stock} inicial={beginning} />
             ) : (

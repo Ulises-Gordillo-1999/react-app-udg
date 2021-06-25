@@ -14,7 +14,6 @@ const Item = ({ name, precio, stock, image, id }) => {
       <div className="card-body">
         <h5 className="card-title"> ${name} </h5>
         <h5 className="card-title"> ${precio} </h5>
-        <p className="card-text">unidades disponibles {stock} </p>
         <Link to={`/${id}`}>
           <Button variant="info" size="lg" blocktype="button" >
             See Product Details
