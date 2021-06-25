@@ -44,7 +44,7 @@ const ItemList = () => {
       
       {consoles.map((element, index) => {
         return (
-          <div className="col-md-4" key={element.id}>
+          <div className="col-sm-3" key={element.id}>
           <Item
             key={index}
             name={element.title}
@@ -58,7 +58,7 @@ const ItemList = () => {
       })}
       {computacion.map((element, index) => {
         return (
-          <div className="col-md-4" key={element.id}>
+          <div className="col-sm-3" key={element.id}>
           <Item
             key={index}
             name={element.title}
@@ -72,7 +72,7 @@ const ItemList = () => {
       })}
       {accesorios.map((element, index) => {
         return (
-          <div className="col-md-4" key={element.id}>
+          <div className="col-sm-3" key={element.id}>
           <Item
             key={index}
             name={element.title}
