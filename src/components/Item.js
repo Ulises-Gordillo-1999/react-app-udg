@@ -3,7 +3,7 @@ import React,{useState} from "react";
 //import ModalDetails from "./ModalDetails";
 import { Link } from "react-router-dom";
 import "./Item.css";
-import Button from "react-bootstrap/Button";
+//import Button from "react-bootstrap/Button";
 import Spinner from 'react-bootstrap/Spinner'
 
 const Item = ({ name, precio, stock, image, id }) => {
@@ -15,9 +15,7 @@ const Item = ({ name, precio, stock, image, id }) => {
         <h5 className="card-title"> ${name} </h5>
         <h5 className="card-title"> ${precio} </h5>
         <Link to={`/${id}`}>
-          <Button variant="info" size="lg" blocktype="button" >
-            See Product Details
-          </Button>
+        <a  class="btn btn-info btn-lg btn-block">See Product Details</a>
         </Link>
       </div>
     </div>
