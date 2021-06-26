@@ -51,7 +51,7 @@ const ItemList = () => {
             id={element.id}
             precio={element.price}
             stock={element.available_quantity}
-            image={element.thumbnail}
+            image={element.pictures? element.pictures[0].secure_url : element.thumbnail}
           />
           </div>
         );
@@ -65,7 +65,7 @@ const ItemList = () => {
             id={element.id}
             precio={element.price}
             stock={element.available_quantity}
-            image={element.thumbnail}
+            image={element.pictures? element.pictures[0].secure_url : element.thumbnail}
           />
            </div>
         );
@@ -79,7 +79,7 @@ const ItemList = () => {
             id={element.id}
             precio={element.price}
             stock={element.available_quantity}
-            image={element.thumbnail}
+            image={element.pictures? element.pictures[0].secure_url : element.thumbnail}
           />
           </div>
         );

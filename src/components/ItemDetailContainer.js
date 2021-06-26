@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
   };
 
   return (
-    <div className="container animate__animated animate__rotateInDownLeft">
+    <div className="container fluid animate__animated animate__rotateInDownLeft">
       <div className="row justify-content-center">
       {item !== null ? (
         <ItemDetail
@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
           id={item.id}
           precio={item.price}
           stock={item.available_quantity}
-          image={item.thumbnail}
+          image={item.pictures? item.pictures[0].secure_url : item.thumbnail}
         />
       ) : (
         <p>cargando</p>
