@@ -23,8 +23,8 @@ const ItemDetailContainer = () => {
   };
 
   return (
-    <div className="container fluid animate__animated animate__rotateInDownLeft">
-      <div className="row justify-content-center">
+    <div className="container d-flex justify-content-center align-items-center h-100 fluid animate__animated animate__rotateInDownLeft">
+      <div className="row ">
       {item !== null ? (
         <ItemDetail
           name={item.title}

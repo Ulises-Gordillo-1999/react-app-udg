@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 
 function ItemListContainer() {
   return (
-    <div className="container d-flex justify-content-center align-items-center h100">
+    <div className="container d-flex justify-content-center align-items-center h-100">
       <ItemList />
     </div>
   );
