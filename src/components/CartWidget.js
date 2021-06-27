@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/carrito-de-compras.png";
-import { BsFillBagFill } from "react-icons/bs";
+//import { BsFillBagFill } from "react-icons/bs";
 
 function CartWidget() {
   return (

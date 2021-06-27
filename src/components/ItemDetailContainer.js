@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 
 //Bootstrap
-import Container from "react-bootstrap/Container";
+//import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center h-100 fluid animate__animated animate__rotateInDownLeft">
+    <div className="container animate__animated animate__rotateInDownLeft">
       <div className="row ">
       {item !== null ? (
         <ItemDetail

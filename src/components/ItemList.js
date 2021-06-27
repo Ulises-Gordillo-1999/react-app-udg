@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
 //import { CardDeck } from "react-bootstrap";
-import CardColumns from "react-bootstrap/CardColumns";
+//import CardColumns from "react-bootstrap/CardColumns";
 
 const ItemList = () => {
   const [consoles, setConsoles] = useState([]);

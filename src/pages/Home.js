@@ -3,7 +3,7 @@ import ItemListContainer from "../components/ItemListContainer";
 import image from '../assets/home.gif'
 
 //Bootstrap
-import Container from "react-bootstrap/Container";
+//import Container from "react-bootstrap/Container";
 //import Image from "react-bootstrap/Image";
 
 //Imagen

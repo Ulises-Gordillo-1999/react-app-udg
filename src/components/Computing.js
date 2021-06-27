@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CardColumns from "react-bootstrap/CardColumns";
+//import CardColumns from "react-bootstrap/CardColumns";
 import Item from "./Item";
 
 function Computing() {
