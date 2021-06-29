@@ -34,7 +34,7 @@ export default function NavBar() {
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link href="#deets">
+          <Nav.Link as={Link} to="/Cart/Content" >
             Cart
             <CartWidget />
           </Nav.Link>

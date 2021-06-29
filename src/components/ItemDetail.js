@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import ItemCount from "./ItemCount";
+//Context
+import {UseCart} from './CartContext'
 
 //Bootstrap
 import Button from "react-bootstrap/Button";
 //import Image from "react-bootstrap/Image";
 
 const ItemDetail = ({ name, id, precio, stock, image }) => {
+
+  //ContextCart
+  const {AddCartContent} = UseCart() //->Cartcontext.Copsumer
+
   let beginning = 0;
   const [amount, setAmount] = useState(0);
 
   const onAdd = (e) => {
     setAmount(e.onAdd);
+    AddCartContent(name, e, image, id);
   };
 
   return (
@@ -30,7 +37,7 @@ const ItemDetail = ({ name, id, precio, stock, image }) => {
             {amount === 0 ? (
               <ItemCount onAdd={onAdd} stock={stock} inicial={beginning} />
             ) : (
-              <Button variant="success">Terminar Compra</Button>
+              <Button  variant="success">Terminar Compra</Button>
             )}
           </div>
         </div>
@@ -40,3 +47,5 @@ const ItemDetail = ({ name, id, precio, stock, image }) => {
 };
 
 export default ItemDetail;
+
+{/*<Button onClick={()=>{AddCartContent({name, id, image})}} variant="success">Terminar Compra</Button> */}

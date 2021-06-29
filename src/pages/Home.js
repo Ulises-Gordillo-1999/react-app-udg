@@ -11,7 +11,7 @@ import image from '../assets/home.gif'
 function Home() {
   return (
     <div className="container">
-      <img src={image} className="animate__animated animate__hinge" />
+      <img src={image} className="animate__animated animate__hinge" alt="" />
       <ItemListContainer />
     </div>
   );

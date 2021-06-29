@@ -9,6 +9,7 @@ import ItemDetailContainer from "../components/ItemDetailContainer";
 import Consoles from "../components/Consoles";
 import Computing from "../components/Computing";
 import Cameras_accessories from "../components/Cameras_accessories";
+import CartContainer from "../components/CartContainer";
 
 function AppRouter() {
   return (
@@ -26,6 +27,7 @@ function AppRouter() {
           path="/:Categories/cameras_accessories"
           component={Cameras_accessories}
         />
+        <Route  path="/Cart/Content" component={CartContainer} />
       </Switch>
     </Router>
   );

@@ -9,7 +9,7 @@ import "./Item.css";
 const Item = ({ name, precio, stock, image, id }) => {
   return (
     <div className="card text-center border-dark h-100  animate__animated animate__backInUp " id={id}>
-      <img src={image} className="card-img-top" alt="" />
+      <img src={image} className="card-img-top" alt=""/>
       <div className="card-body">
         <h6 className="card-title"> {name} </h6>
         <h6 className="card-title"> ${precio} </h6>
