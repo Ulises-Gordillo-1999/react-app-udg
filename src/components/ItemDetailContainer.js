@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 
 //Bootstrap
+import Spinner from "react-bootstrap/Spinner";
 //import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 
@@ -22,22 +23,46 @@ const ItemDetailContainer = () => {
     setItem(users);
   };
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+  }, []);
+
   return (
-    <div className="container animate__animated animate__rotateInDownLeft">
-      <div className="row ">
-      {item !== null ? (
-        <ItemDetail
-          name={item.title}
-          id={item.id}
-          precio={item.price}
-          stock={item.available_quantity}
-          image={item.pictures? item.pictures[0].secure_url : item.thumbnail}
-        />
+    <>
+      {loading ? (
+        <div className="container">
+          <div className="row justify-content-md-center ">
+            <div className="col-md-auto">
+              <div className="spinner-border text-dark" style={{width: "3rem", height: "3rem"}} role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
       ) : (
-        <p>cargando</p>
+        <div className="container animate__animated animate__rotateInDownLeft">
+          <div className="row ">
+            {item !== null ? (
+              <ItemDetail
+                name={item.title}
+                id={item.id}
+                precio={item.price}
+                stock={item.available_quantity}
+                image={
+                  item.pictures ? item.pictures[0].secure_url : item.thumbnail
+                }
+              />
+            ) : (
+              <p>cargando</p>
+            )}
+          </div>
+        </div>
       )}
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -10,7 +10,7 @@ function App() {
       <CartProvider>
         <AppRouter />
       </CartProvider>
-      <FetchPokeApi />
+      {/*<FetchPokeApi /> */}
     </div>
   );
 }

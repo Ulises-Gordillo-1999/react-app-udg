@@ -16,7 +16,7 @@ function CartContainer() {
         <div className="row">
           {cart.map((itemCart, index) => {
             return (
-              <div className="col-sm-3" key={itemCart.obj}>
+              <div className="col-md-4" key={itemCart.obj}>
                 <div className="card-deck">
                 <Cart
                   key={index}
