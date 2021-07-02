@@ -12,9 +12,14 @@ export function CartProvider({children}) {
     const AddCartContent = (obj, quantity, image, id) =>{
         setCart([...cart, {'obj': obj, 'quantity': quantity, 'image': image, 'id': id}])
     }
+    const deleteItem = (key) =>{
+        let temporal = [...cart]
+        temporal.splice(key,1)
+        setCart(temporal)
+    }    
 
     return (
-        <CartContext.Provider value={{cart, AddCartContent}}>
+        <CartContext.Provider value={{cart, AddCartContent, deleteItem}}>
             {children}
         </CartContext.Provider>
     )

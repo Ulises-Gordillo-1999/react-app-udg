@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 //import CardColumns from "react-bootstrap/CardColumns";
 import Item from "./Item";
+import section from '../assets/ecommerce.jpg'
+import './Styles.css'
 
 function Computing() {
   const [computacion, setComputacion] = useState([]);
@@ -17,6 +19,8 @@ function Computing() {
   };
 
   return (
+    <div>
+    <img src={section} id="image" className="img-fluid w-100 animate__animated animate__jackInTheBox" alt="..."/>
     <div className="container d-flex justify-content-center align-items-center h100">
       <div className="row">
         {computacion.map((element, index) => {
@@ -34,6 +38,7 @@ function Computing() {
           );
         })}
       </div>
+    </div>
     </div>
   );
 }

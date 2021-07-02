@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
+import './ItemDetailContainer.css'
 
 //Bootstrap
-import Spinner from "react-bootstrap/Spinner";
+//import Spinner from "react-bootstrap/Spinner";
 //import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
 
@@ -28,14 +29,14 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
   }, []);
 
   return (
     <>
       {loading ? (
-        <div className="container">
-          <div className="row justify-content-md-center ">
+        <div id="container"  className="container">
+          <div className="row d-flex justify-content-center ">
             <div className="col-md-auto">
               <div className="spinner-border text-dark" style={{width: "3rem", height: "3rem"}} role="status">
                 <span className="sr-only">Loading...</span>
@@ -44,7 +45,7 @@ const ItemDetailContainer = () => {
           </div>
         </div>
       ) : (
-        <div className="container animate__animated animate__rotateInDownLeft">
+        <div id="container" className="container animate__animated animate__rotateInDownLeft">
           <div className="row ">
             {item !== null ? (
               <ItemDetail

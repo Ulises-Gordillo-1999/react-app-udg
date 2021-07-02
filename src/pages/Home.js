@@ -1,6 +1,8 @@
 import React from "react";
 import ItemListContainer from "../components/ItemListContainer";
-import image from '../assets/home.gif'
+//import image from '../assets/home.gif'
+import section from '../assets/ecommerce.jpg'
+import '../components/Styles.css'
 
 //Bootstrap
 //import Container from "react-bootstrap/Container";
@@ -10,10 +12,12 @@ import image from '../assets/home.gif'
 
 function Home() {
   return (
+    <>
+    <img id="image" src={section} className="img-fluid w-100 animate__animated animate__zoomInDown" alt="..."/>
     <div className="container">
-      <img src={image} className="animate__animated animate__hinge" alt="" />
       <ItemListContainer />
     </div>
+    </>
   );
 }
 

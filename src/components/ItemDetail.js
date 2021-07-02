@@ -47,5 +47,3 @@ const ItemDetail = ({ name, id, precio, stock, image }) => {
 };
 
 export default ItemDetail;
-
-{/*<Button onClick={()=>{AddCartContent({name, id, image})}} variant="success">Terminar Compra</Button> */}

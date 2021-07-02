@@ -24,6 +24,7 @@ function CartContainer() {
                   amount={itemCart.quantity}
                   image={itemCart.image}
                   id={itemCart.id}
+                  indice={index}
                 />
                 </div>
               </div>
@@ -36,5 +37,3 @@ function CartContainer() {
 }
 
 export default CartContainer;
-
-//name={itemCart.obj} id={itemCart.id} image={itemCart.image}
