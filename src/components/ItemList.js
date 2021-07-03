@@ -41,46 +41,57 @@ const ItemList = () => {
 
   return (
     <div className="row">
-      
       {consoles.map((element, index) => {
         return (
           <div className="col-sm-3" key={element.id}>
-          <Item
-            key={index}
-            name={element.title}
-            id={element.id}
-            precio={element.price}
-            stock={element.available_quantity}
-            image={element.pictures? element.pictures[0].secure_url : element.thumbnail}
-          />
+            <Item
+              key={index}
+              name={element.title}
+              id={element.id}
+              precio={element.price}
+              stock={element.available_quantity}
+              image={
+                element.pictures
+                  ? element.pictures[0].secure_url
+                  : element.thumbnail
+              }
+            />
           </div>
         );
       })}
       {computacion.map((element, index) => {
         return (
           <div className="col-sm-3" key={element.id}>
-          <Item
-            key={index}
-            name={element.title}
-            id={element.id}
-            precio={element.price}
-            stock={element.available_quantity}
-            image={element.pictures? element.pictures[0].secure_url : element.thumbnail}
-          />
-           </div>
+            <Item
+              key={index}
+              name={element.title}
+              id={element.id}
+              precio={element.price}
+              stock={element.available_quantity}
+              image={
+                element.pictures
+                  ? element.pictures[0].secure_url
+                  : element.thumbnail
+              }
+            />
+          </div>
         );
       })}
       {accesorios.map((element, index) => {
         return (
           <div className="col-sm-3" key={element.id}>
-          <Item
-            key={index}
-            name={element.title}
-            id={element.id}
-            precio={element.price}
-            stock={element.available_quantity}
-            image={element.pictures? element.pictures[0].secure_url : element.thumbnail}
-          />
+            <Item
+              key={index}
+              name={element.title}
+              id={element.id}
+              precio={element.price}
+              stock={element.available_quantity}
+              image={
+                element.pictures
+                  ? element.pictures[0].secure_url
+                  : element.thumbnail
+              }
+            />
           </div>
         );
       })}

@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import ItemCount from "./ItemCount";
 //Context
-import {UseCart} from './CartContext'
+import { UseCart } from "../Context/CartContext";
 
 //Bootstrap
 import Button from "react-bootstrap/Button";
 //import Image from "react-bootstrap/Image";
 
 const ItemDetail = ({ name, id, precio, stock, image }) => {
-
   //ContextCart
-  const {AddCartContent} = UseCart() //->Cartcontext.Copsumer
+  const { AddCartContent } = UseCart(); //->Cartcontext.Copsumer
 
   let beginning = 0;
   const [amount, setAmount] = useState(0);
@@ -21,23 +20,21 @@ const ItemDetail = ({ name, id, precio, stock, image }) => {
   };
 
   return (
-    <div className="card text-center mb-3" >
+    <div className="card text-center mb-3" id={id}>
       <div className="row no-gutters">
         <div className="col-md-8">
           <img src={image} alt="..." />
         </div>
         <div className="col-md-4">
-          <div className="card-body" id={id}>
+          <div className="card-body">
             <h2 className="card-title"> {name} </h2>
             <h3 className="card-title"> ${precio} </h3>
-            <h4 className="card-text">
-              Unidades disponibles {stock}
-            </h4>
+            <h4 className="card-text">Unidades disponibles {stock}</h4>
             <br></br>
             {amount === 0 ? (
               <ItemCount onAdd={onAdd} stock={stock} inicial={beginning} />
             ) : (
-              <Button  variant="success">Terminar Compra</Button>
+              <Button variant="success">Terminar Compra</Button>
             )}
           </div>
         </div>

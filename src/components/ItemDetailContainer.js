@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
-import './ItemDetailContainer.css'
+import "./ItemDetailContainer.css";
 
 //Bootstrap
 //import Spinner from "react-bootstrap/Spinner";
@@ -35,17 +35,24 @@ const ItemDetailContainer = () => {
   return (
     <>
       {loading ? (
-        <div id="container"  className="container">
+        <div id="container" className="container">
           <div className="row d-flex justify-content-center ">
             <div className="col-md-auto">
-              <div className="spinner-border text-dark" style={{width: "3rem", height: "3rem"}} role="status">
+              <div
+                className="spinner-border text-dark"
+                style={{ width: "3rem", height: "3rem" }}
+                role="status"
+              >
                 <span className="sr-only">Loading...</span>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <div id="container" className="container animate__animated animate__rotateInDownLeft">
+        <div
+          id="container"
+          className="container animate__animated animate__rotateInDownLeft"
+        >
           <div className="row ">
             {item !== null ? (
               <ItemDetail
