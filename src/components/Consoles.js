@@ -3,21 +3,30 @@ import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import section from "../assets/ecommerce.jpg";
 import "./Styles.css";
+import {getFireStore} from '../Firebase/Firebase'
 
 function Consoles() {
   const [consoles, setConsoles] = useState([]);
   useEffect(() => {
-    getInformationCon();
+    const db = getFireStore();
+   const itemCollection = db.collection("procesadores-intel")
+   itemCollection.get().then((querySnapshot) => {
+    setConsoles(querySnapshot.docs.map(doc=> doc.data()));
+  })   
+    //getInformationCon();
   }, []);
-  const getInformationCon = async () => {
+  
+  /*const getInformationCon = async () => {
     const data = await fetch(
       "https://api.mercadolibre.com/sites/MLA/search?category=MLA1144"
     );
     const users = await data.json();
     setConsoles(users.results);
-  };
+  };*/
+
   return (
     <>
+    {console.log(consoles)}
       <img
         id="image"
         src={section}
@@ -35,7 +44,7 @@ function Consoles() {
                   id={element.id}
                   precio={element.price}
                   stock={element.available_quantity}
-                  image={element.thumbnail}
+                  image={element.image}
                 />
               </div>
             );

@@ -3,23 +3,30 @@ import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import section from "../assets/ecommerce.jpg";
 import "./Styles.css";
+import {getFireStore} from '../Firebase/Firebase'
 
 function Computing() {
   const [computacion, setComputacion] = useState([]);
   useEffect(() => {
-    getInformationComp();
+    const db = getFireStore();
+   const itemCollection = db.collection("procesadores-amd")
+   itemCollection.get().then((querySnapshot) => {
+    setComputacion(querySnapshot.docs.map(doc=> doc.data()));
+  })   
+    //getInformationComp();
   }, []);
-  const getInformationComp = async () => {
+  /*const getInformationComp = async () => {
     const data = await fetch(
       "https://api.mercadolibre.com/sites/MLA/search?category=MLA1648"
     );
     const users = await data.json();
     //console.log(users.results);
     setComputacion(users.results);
-  };
+  };*/
 
   return (
     <div>
+      {console.log(computacion)}
       <img
         src={section}
         id="image"
@@ -37,7 +44,7 @@ function Computing() {
                   id={element.id}
                   precio={element.price}
                   stock={element.available_quantity}
-                  image={element.thumbnail}
+                  image={element.image}
                 />
               </div>
             );

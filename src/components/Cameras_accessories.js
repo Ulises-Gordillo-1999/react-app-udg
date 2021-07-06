@@ -3,21 +3,28 @@ import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import section from "../assets/ecommerce.jpg";
 import "./Styles.css";
+//
+import {getFireStore} from '../Firebase/Firebase'
 
 function Cameras_accessories() {
   const [accesorios, setAccesorios] = useState([]);
   useEffect(() => {
-    getInformationAccesorios();
+    const db = getFireStore();
+   const itemCollection = db.collection("accesorios")
+   itemCollection.get().then((querySnapshot) => {
+    setAccesorios(querySnapshot.docs.map(doc=> doc.data()));
+  })
+    //getInformationAccesorios();
   }, []);
 
-  const getInformationAccesorios = async () => {
+  /*const getInformationAccesorios = async () => {
     const data = await fetch(
       "https://api.mercadolibre.com/sites/MLA/search?category=MLA1039"
     );
     const users = await data.json();
-    console.log(users.results);
+    //console.log(users.results);
     setAccesorios(users.results);
-  };
+  };*/
 
   return (
     <>
@@ -38,7 +45,7 @@ function Cameras_accessories() {
                   id={element.id}
                   precio={element.price}
                   stock={element.available_quantity}
-                  image={element.thumbnail}
+                  image={element.image}
                 />
               </div>
             );
