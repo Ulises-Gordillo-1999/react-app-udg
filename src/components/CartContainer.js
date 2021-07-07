@@ -8,6 +8,8 @@ import "../components/Styles.css";
 function CartContainer() {
   const { cart } = UseCart();
   const { eraseEverything } = UseCart();
+  console.log(cart)
+  console.log(cart.length)
   return (
     <>
       <img
@@ -17,38 +19,41 @@ function CartContainer() {
         alt="..."
       />
       <div>
-        {console.log(cart)}
-        <div className="container  ">
-          <table className="table table-striped table-dark">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Product name</th>
-                <th scope="col">added quantity</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.map((itemCart, index) => {
-                return (
-                  <Cart
-                    key={index}
-                    name={itemCart.obj}
-                    amount={itemCart.quantity}
-                    image={itemCart.image}
-                    id={itemCart.id}
-                    indice={index}
-                  />
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-        {console.log(cart.length)}
         {cart.length !== 0 ? (
-          <Button onClick={() => eraseEverything()}>borrar todo</Button>
+          <div className="container  ">
+         <table className="table table-striped table-dark">
+         <thead>
+           <tr>
+             <th scope="col">#</th>
+             <th scope="col">Product name</th>
+             <th scope="col">added quantity</th>
+             <th scope="col">Handle</th>
+           </tr>
+         </thead>
+         <tbody>
+           {cart.map((itemCart, index) => {
+             return (
+               <Cart
+                 key={index}
+                 name={itemCart.obj}
+                 amount={itemCart.quantity}
+                 image={itemCart.image}
+                 id={itemCart.id}
+                 indice={index}
+               />
+             );
+           })}
+         </tbody>
+       </table>
+     </div>
         ) : (
-          <p style={{ color: "red" }}>no hay nada</p>
+          <h1 className="text-center" style={{ color: "blue", fontFamily: "fantasy",fontStyle:"italic", fontSize:"50px" }}>no se agrego ningun producto</h1>
+        )}
+          
+        {cart.length !== 0 ? (
+          <Button size="lg" onClick={() => eraseEverything()}>borrar todo</Button>
+        ) : (
+          <></>
         )}
       </div>
     </>

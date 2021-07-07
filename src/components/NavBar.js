@@ -1,5 +1,6 @@
 import React from "react";
 import CartWidget from "./CartWidget";
+import { UseCart } from "../Context/CartContext";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { BsHouseDoorFill } from "react-icons/bs";
@@ -9,6 +10,7 @@ import { AiFillCamera } from "react-icons/ai";
 import { BsPuzzleFill } from "react-icons/bs";
 
 export default function NavBar() {
+  const { cart } = UseCart();
   return (
     <Navbar
       id="navbar"
@@ -50,6 +52,7 @@ export default function NavBar() {
           <Nav.Link as={Link} to="/Cart/Content">
             Cart
             <CartWidget />
+            <span class="badge badge-light">{cart.length}</span>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
