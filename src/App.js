@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import FetchPokeApi from "./components/FetchPokeApi";
 import AppRouter from "./routers/AppRouter";
 //import "bootstrap/dist/css/bootstrap.min.css";
 import { CartProvider } from "./Context/CartContext";
 //Firebase
-import firebase from 'firebase/app'
-import "@firebase/firestore"
+//import "@firebase/firestore"
 
 function App() {
   return (

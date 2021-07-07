@@ -35,7 +35,7 @@ function Consoles() {
                   name={element.name}
                   id={element.id}
                   precio={element.price}
-                  stock={element.available_quantity}
+                  stock={element.stock}
                   image={element.image}
                 />
               </div>

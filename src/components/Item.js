@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-//import ItemCount from "./ItemCount";
-//import ModalDetails from "./ModalDetails";
 import { Link } from "react-router-dom";
 import "./Item.css";
-//import Button from "react-bootstrap/Button";
-//import Spinner from "react-bootstrap/Spinner";
 
 const Item = ({ name, precio, stock, image, id }) => {
   return (

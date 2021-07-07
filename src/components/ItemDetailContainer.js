@@ -51,10 +51,10 @@ const ItemDetailContainer = () => {
           <div className="row ">
             {item !== null ? (
               <ItemDetail
-                name={item.title}
+                name={item.name}
                 id={item.id}
                 precio={item.price}
-                stock={item.available_quantity}
+                stock={item.stock}
                 image={item.image}
               />
             ) : (
