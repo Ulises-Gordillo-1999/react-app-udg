@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import CardColumns from "react-bootstrap/CardColumns";
 import Item from "./Item";
 import section from "../assets/ecommerce.jpg";
 import "./Styles.css";
@@ -15,16 +14,8 @@ function Consoles() {
     oneItem.get().then((querySnapshot) => {
       setConsoles(querySnapshot.docs.map((doc) => doc.data()));
     });
-    //getInformationCon();
   }, []);
   console.log(consoles);
-  /*const getInformationCon = async () => {
-    const data = await fetch(
-      "https://api.mercadolibre.com/sites/MLA/search?category=MLA1144"
-    );
-    const users = await data.json();
-    setConsoles(users.results);
-  };*/
 
   return (
     <>

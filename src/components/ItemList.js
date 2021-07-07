@@ -1,51 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Item from "./Item";
-//import { CardDeck } from "react-bootstrap";
-//import CardColumns from "react-bootstrap/CardColumns";
-import {getFireStore} from '../Firebase/Firebase'
+import { getFireStore } from "../Firebase/Firebase";
 
 const ItemList = () => {
-  const [consoles, setConsoles] = useState([]);
-  const [computacion, setComputacion] = useState([]);
-  const [accesorios, setAccesorios] = useState([]);
-  const [productos, setProductos] = useState([])
+  const [productos, setProductos] = useState([]);
 
   useEffect(() => {
     const db = getFireStore();
-    const itemCollection = db.collection("menu")
+    const itemCollection = db.collection("menu");
     itemCollection.get().then((querySnapshot) => {
-     setProductos(querySnapshot.docs.map(doc=> doc.data()));
-   })   
-    /*getInformationCon();
-    getInformationComp();
-    getInformationAccesorios();*/
+      setProductos(querySnapshot.docs.map((doc) => doc.data()));
+    });
   }, []);
-  console.log(productos)
 
-  /*const getInformationCon = async () => {
-    const data = await fetch(
-      "https://api.mercadolibre.com/sites/MLA/search?category=MLA1144"
-    );
-    const users = await data.json();
-    //console.log(users.results)
-    setConsoles(users.results);
-  };
-  const getInformationComp = async () => {
-    const data = await fetch(
-      "https://api.mercadolibre.com/sites/MLA/search?category=MLA1648"
-    );
-    const users = await data.json();
-    //console.log(users.results)
-    setComputacion(users.results);
-  };
-  const getInformationAccesorios = async () => {
-    const data = await fetch(
-      "https://api.mercadolibre.com/sites/MLA/search?category=MLA1039"
-    );
-    const users = await data.json();
-    //console.log(users.results)
-    setAccesorios(users.results);
-  };*/
+  console.log(productos);
 
   return (
     <div className="row">
@@ -58,9 +26,7 @@ const ItemList = () => {
               id={element.id}
               precio={element.price}
               stock={element.available_quantity}
-              image={
-                element.image
-              }
+              image={element.image}
             />
           </div>
         );

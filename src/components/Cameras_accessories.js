@@ -1,32 +1,20 @@
 import React, { useState, useEffect } from "react";
-//import CardColumns from "react-bootstrap/CardColumns";
 import Item from "./Item";
 import section from "../assets/ecommerce.jpg";
 import "./Styles.css";
-//
-import {getFireStore} from '../Firebase/Firebase'
+import { getFireStore } from "../Firebase/Firebase";
 
 function Cameras_accessories() {
   const [accesorios, setAccesorios] = useState([]);
   useEffect(() => {
     const db = getFireStore();
-   const itemCollection = db.collection("menu")
-   const oneItem = itemCollection.where("category", "==", "Accesorios");
-   oneItem.get().then((querySnapshot) => {
-    setAccesorios(querySnapshot.docs.map(doc=> doc.data()));
-  })
-    //getInformationAccesorios();
+    const itemCollection = db.collection("menu");
+    const oneItem = itemCollection.where("category", "==", "Accesorios");
+    oneItem.get().then((querySnapshot) => {
+      setAccesorios(querySnapshot.docs.map((doc) => doc.data()));
+    });
   }, []);
-  console.log(accesorios)
-
-  /*const getInformationAccesorios = async () => {
-    const data = await fetch(
-      "https://api.mercadolibre.com/sites/MLA/search?category=MLA1039"
-    );
-    const users = await data.json();
-    //console.log(users.results);
-    setAccesorios(users.results);
-  };*/
+  console.log(accesorios);
 
   return (
     <>

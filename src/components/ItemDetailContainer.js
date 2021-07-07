@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail";
 import "./ItemDetailContainer.css";
-//Bootstrap
-//import Spinner from "react-bootstrap/Spinner";
-//import Container from "react-bootstrap/Container";
 import { useParams } from "react-router-dom";
-import {getFireStore} from '../Firebase/Firebase'
+import { getFireStore } from "../Firebase/Firebase";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
@@ -13,25 +10,14 @@ const ItemDetailContainer = () => {
   let { Products_id } = useParams();
 
   useEffect(() => {
-  const db = getFireStore();
-   const itemCollection = db.collection("menu")
-   const oneItem = itemCollection.where('id', '==', Products_id)
-   oneItem.get().then((querySnapshot) => {
-     const temp = querySnapshot.docs.map((doc)=> doc.data());
-    setItem(temp[0]);
-  })   
-    //getInformation();
-
+    const db = getFireStore();
+    const itemCollection = db.collection("menu");
+    const oneItem = itemCollection.where("id", "==", Products_id);
+    oneItem.get().then((querySnapshot) => {
+      const temp = querySnapshot.docs.map((doc) => doc.data());
+      setItem(temp[0]);
+    });
   }, []);
-
-  /*const getInformation = async () => {
-    const data = await fetch(
-      `https://api.mercadolibre.com/items/${Products_id}?include_attributes=all`
-    );
-    const users = await data.json();
-    //console.log(users)
-    setItem(users);
-  };*/
 
   const [loading, setLoading] = useState(true);
 
@@ -69,9 +55,7 @@ const ItemDetailContainer = () => {
                 id={item.id}
                 precio={item.price}
                 stock={item.available_quantity}
-                image={
-                  item.image
-                }
+                image={item.image}
               />
             ) : (
               <p>cargando</p>
