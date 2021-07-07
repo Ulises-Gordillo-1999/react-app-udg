@@ -7,14 +7,17 @@ import {getFireStore} from '../Firebase/Firebase'
 
 function Computing() {
   const [computacion, setComputacion] = useState([]);
+
   useEffect(() => {
     const db = getFireStore();
-   const itemCollection = db.collection("procesadores-amd")
-   itemCollection.get().then((querySnapshot) => {
+   const itemCollection = db.collection("menu")
+   const oneItem = itemCollection.where("category", "==" , "Procesadores-intel")
+   oneItem.get().then((querySnapshot) => {
     setComputacion(querySnapshot.docs.map(doc=> doc.data()));
   })   
     //getInformationComp();
   }, []);
+  console.log(computacion)
   /*const getInformationComp = async () => {
     const data = await fetch(
       "https://api.mercadolibre.com/sites/MLA/search?category=MLA1648"
@@ -26,7 +29,6 @@ function Computing() {
 
   return (
     <div>
-      {console.log(computacion)}
       <img
         src={section}
         id="image"
@@ -40,7 +42,7 @@ function Computing() {
               <div className="col-sm-3" key={element.id}>
                 <Item
                   key={index}
-                  name={element.title}
+                  name={element.name}
                   id={element.id}
                   precio={element.price}
                   stock={element.available_quantity}

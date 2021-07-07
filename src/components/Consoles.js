@@ -3,19 +3,21 @@ import React, { useState, useEffect } from "react";
 import Item from "./Item";
 import section from "../assets/ecommerce.jpg";
 import "./Styles.css";
-import {getFireStore} from '../Firebase/Firebase'
+import { getFireStore } from "../Firebase/Firebase";
 
 function Consoles() {
   const [consoles, setConsoles] = useState([]);
+
   useEffect(() => {
     const db = getFireStore();
-   const itemCollection = db.collection("procesadores-intel")
-   itemCollection.get().then((querySnapshot) => {
-    setConsoles(querySnapshot.docs.map(doc=> doc.data()));
-  })   
+    const itemCollection = db.collection("menu");
+    const oneItem = itemCollection.where("category", "==", "Procesadores-amd");
+    oneItem.get().then((querySnapshot) => {
+      setConsoles(querySnapshot.docs.map((doc) => doc.data()));
+    });
     //getInformationCon();
   }, []);
-  
+  console.log(consoles);
   /*const getInformationCon = async () => {
     const data = await fetch(
       "https://api.mercadolibre.com/sites/MLA/search?category=MLA1144"
@@ -26,7 +28,6 @@ function Consoles() {
 
   return (
     <>
-    {console.log(consoles)}
       <img
         id="image"
         src={section}
@@ -40,7 +41,7 @@ function Consoles() {
               <div className="col-sm-3" key={element.id}>
                 <Item
                   key={index}
-                  name={element.title}
+                  name={element.name}
                   id={element.id}
                   precio={element.price}
                   stock={element.available_quantity}

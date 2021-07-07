@@ -10,12 +10,14 @@ function Cameras_accessories() {
   const [accesorios, setAccesorios] = useState([]);
   useEffect(() => {
     const db = getFireStore();
-   const itemCollection = db.collection("accesorios")
-   itemCollection.get().then((querySnapshot) => {
+   const itemCollection = db.collection("menu")
+   const oneItem = itemCollection.where("category", "==", "Accesorios");
+   oneItem.get().then((querySnapshot) => {
     setAccesorios(querySnapshot.docs.map(doc=> doc.data()));
   })
     //getInformationAccesorios();
   }, []);
+  console.log(accesorios)
 
   /*const getInformationAccesorios = async () => {
     const data = await fetch(
@@ -41,7 +43,7 @@ function Cameras_accessories() {
               <div className="col-sm-3" key={element.id}>
                 <Item
                   key={index}
-                  name={element.title}
+                  name={element.name}
                   id={element.id}
                   precio={element.price}
                   stock={element.available_quantity}
