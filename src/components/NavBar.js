@@ -33,15 +33,15 @@ export default function NavBar() {
           </Nav.Link>
           <NavDropdown title="Categories" id="collasible-nav-dropdown">
             <NavDropdown.Item as={Link} to="/Categories/consoles">
-              Consoles y video game
+              Procesadores AMD
               <BsPuzzleFill />
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/Categories/computing">
               {" "}
-              Computing <BsFillDisplayFill />
+              Procesadores Intel <BsFillDisplayFill />
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/Categories/cameras_accessories">
-              Cameras and accessories
+              Accessories
               <AiFillCamera />
             </NavDropdown.Item>
           </NavDropdown>
