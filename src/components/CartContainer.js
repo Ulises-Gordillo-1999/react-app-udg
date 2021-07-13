@@ -5,8 +5,7 @@ import Button from "react-bootstrap/Button";
 import section from "../assets/carrito_ecommerce.jpg";
 import "../components/Styles.css";
 //
-import * as firebase from 'firebase';
-import '@firebase/firestore'
+import firebase from 'firebase/app';
 import {getFireStore } from '../Firebase/Firebase'
 
 function CartContainer() {
