@@ -43,6 +43,10 @@ function CartContainer() {
         [event.target.name] : event.target.value
     })
 }
+const enviarDatos = (event) => {
+  event.preventDefault()
+  console.log('enviando datos...' + datos.nombre + ' ' + datos.apellido)
+}
 
   console.log(cart)
   console.log(cart.length)
@@ -84,7 +88,7 @@ function CartContainer() {
        </table>
        <Fragment>
             <h1>Formulario</h1>
-            <form className="row" >
+            <form className="row" onSubmit={enviarDatos}>
                 <div className="col-md-3">
                     <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre" required></input>
                 </div>
@@ -97,19 +101,13 @@ function CartContainer() {
                 <div className="col-md-3">
                     <input type="number" placeholder="edad" className="form-control" onChange={handleInputChange}  name="edad" required></input>
                 </div>
+                <button type="submit" className="btn btn-primary" onClick={() => eraseEverything()}>Erase everything</button>
+                <button type="submit" className="btn btn-primary" onClick={() => sendOrder()}>To buy</button>
             </form>
         </Fragment>
      </div>
         ) : (
-          <h1 className="text-center" style={{ color: "blue", fontFamily: "fantasy",fontStyle:"italic", fontSize:"50px" }}>no se agrego ningun producto</h1>
-        )}
-        {cart.length !== 0 ? (
-          <div>
-          <Button size="lg" onClick={() => eraseEverything()}>Erase everything</Button>
-          <Button type="submit" size="lg" onClick={() => sendOrder()}>To buy</Button>
-          </div>
-        ) : (
-          <></>
+          <h1 className="text-center" style={{ color: "blue", fontFamily: "fantasy",fontStyle:"italic", fontSize:"50px" }}>No se agrego ningun producto</h1>
         )}
       </div>
     </>
