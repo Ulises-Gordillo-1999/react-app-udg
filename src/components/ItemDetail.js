@@ -34,7 +34,7 @@ const ItemDetail = ({ name, id, precio, stock, image }) => {
             {amount === 0 ? (
               <ItemCount onAdd={onAdd} stock={stock} inicial={beginning} />
             ) : (
-              <Button variant="success">Terminar Compra</Button>
+              <Button variant="success">Finalize purchase</Button>
             )}
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import CartWidget from "./CartWidget";
+import Image from "react-bootstrap/Image";
 import { UseCart } from "../Context/CartContext";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
@@ -21,8 +22,13 @@ export default function NavBar() {
       variant="light"
     >
       <Navbar.Brand as={Link} to="/">
-        {" "}
-        UDG Ventas{" "}
+        <Image
+          width={64}
+          height={64}
+          className="mr-3"
+          src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/283/5631205283_f8d8680e-7b4a-4b64-b7c9-ab9c318d7ec5.png?cb=1626055514"
+          rounded
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -30,17 +36,14 @@ export default function NavBar() {
           <Nav.Link as={Link} to="/">
             Home <BsHouseDoorFill />{" "}
           </Nav.Link>
-          <Nav.Link as={Link} to="/About">
-            About <BsFillPersonLinesFill />{" "}
-          </Nav.Link>
           <NavDropdown title="Categories" id="collasible-nav-dropdown">
             <NavDropdown.Item as={Link} to="/Categories/consoles">
-              Procesadores AMD
+              Processors AMD
               <BsPuzzleFill />
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/Categories/computing">
               {" "}
-              Procesadores Intel <BsFillDisplayFill />
+              Processors Intel <BsFillDisplayFill />
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/Categories/cameras_accessories">
               Accessories
@@ -52,7 +55,7 @@ export default function NavBar() {
           <Nav.Link as={Link} to="/Cart/Content">
             Cart
             <CartWidget />
-            <span class="badge badge-light">{cart.length}</span>
+            <span className="badge badge-light">{cart.length}</span>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
