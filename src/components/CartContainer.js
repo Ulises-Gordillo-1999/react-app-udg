@@ -106,7 +106,7 @@ const enviarDatos = (event) => {
         </Fragment>
      </div>
         ) : (
-          <h1 className="text-center" style={{ color: "blue", fontFamily: "fantasy",fontStyle:"italic", fontSize:"50px" }}>No se agrego ningun producto</h1>
+          <h1 className="text-center" style={{ color: "black", fontFamily: "fantasy",fontStyle:"italic", fontSize:"50px" }}>No se agrego ningun producto</h1>
         )}
       </div>
     </>
