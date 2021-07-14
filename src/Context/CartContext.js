@@ -7,9 +7,10 @@ export function UseCart() {
 }
 
 export function CartProvider({ children }) {
+  const [price , setPrice] = useState() 
   const [cart, setCart] = useState([]);
-  const AddCartContent = (obj, quantity, image, id) => {
-    setCart([...cart, { obj: obj, quantity: quantity, image: image, id: id }]);
+  const AddCartContent = (obj, quantity, image, id, precio) => {
+    setCart([...cart, { obj: obj, quantity: quantity, image: image, id: id, precio: precio }]); 
   };
   const deleteItem = (key) => {
     let temporal = [...cart];
@@ -21,12 +22,27 @@ export function CartProvider({ children }) {
     temp.splice(key);
     setCart(temp);
   };
-
+  const Total = (e) =>{
+    let temp= Object.values(e).reduce((acc, {quantity, precio}) => acc + quantity * precio, 0);
+    setPrice(temp);
+  } 
   return (
     <CartContext.Provider
-      value={{ cart, AddCartContent, deleteItem, eraseEverything }}
+      value={{ cart, AddCartContent, deleteItem, eraseEverything, Total, price }}
     >
       {children}
     </CartContext.Provider>
   );
 }
+/*const Total = () =>{
+    let suma=0;
+    cart.forEach (function(numero){
+       suma += numero.precio * numero.quantity;
+       setPrice(suma)
+  });
+  } */
+  /*const Total = (e) =>{
+    console.log(e)
+    let temp= Object.values(e).reduce((acc, {quantity, precio}) => acc + quantity * precio, 0);
+    setPrice(temp);
+  } */

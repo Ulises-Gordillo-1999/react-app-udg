@@ -15,7 +15,6 @@ function Consoles() {
       setConsoles(querySnapshot.docs.map((doc) => doc.data()));
     });
   }, []);
-  console.log(consoles);
 
   return (
     <>

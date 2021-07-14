@@ -13,8 +13,6 @@ const ItemList = () => {
     });
   }, []);
 
-  console.log(productos);
-
   return (
     <div className="row">
       {productos.map((element, index) => {

@@ -10,15 +10,13 @@ import Button from "react-bootstrap/Button";
 const ItemDetail = ({ name, id, precio, stock, image }) => {
   //ContextCart
   const { AddCartContent } = UseCart(); //->Cartcontext.Copsumer
-
   let beginning = 0;
   const [amount, setAmount] = useState(0);
 
   const onAdd = (e) => {
     setAmount(e.onAdd);
-    AddCartContent(name, e, image, id);
+    AddCartContent(name, e, image, id, precio);
   };
-
   return (
     <div className="card text-center mb-3" id={id}>
       <div className="row no-gutters">

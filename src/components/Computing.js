@@ -20,8 +20,6 @@ function Computing() {
     });
   }, []);
 
-  console.log(computacion);
-
   return (
     <div>
       <img

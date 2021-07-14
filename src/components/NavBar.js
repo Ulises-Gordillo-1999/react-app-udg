@@ -5,7 +5,6 @@ import { UseCart } from "../Context/CartContext";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { BsHouseDoorFill } from "react-icons/bs";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import { BsFillDisplayFill } from "react-icons/bs";
 import { AiFillCamera } from "react-icons/ai";
 import { BsPuzzleFill } from "react-icons/bs";

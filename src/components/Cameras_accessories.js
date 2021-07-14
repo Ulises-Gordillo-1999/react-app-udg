@@ -14,7 +14,6 @@ function Cameras_accessories() {
       setAccesorios(querySnapshot.docs.map((doc) => doc.data()));
     });
   }, []);
-  console.log(accesorios);
 
   return (
     <>
