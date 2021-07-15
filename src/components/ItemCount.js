@@ -32,8 +32,6 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
 
   function addCart() {
     onAdd(clicks);
-    console.log("Compra realizada");
-    //alert("compra realizada")
   }
 
   return (
@@ -57,7 +55,7 @@ const ItemCount = ({ stock, inicial, onAdd }) => {
           Add cart
         </Button>
       ) : (
-        <h4>Incremente el contador</h4>
+        <h4>Start shopping</h4>
       )}
     </Container>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ItemCount from "./ItemCount";
 //Context
 import { UseCart } from "../Context/CartContext";
-
+import { Link } from "react-router-dom";
 //Bootstrap
 import Button from "react-bootstrap/Button";
 //import Image from "react-bootstrap/Image";
@@ -27,12 +27,14 @@ const ItemDetail = ({ name, id, precio, stock, image }) => {
           <div className="card-body">
             <h2 className="card-title"> {name} </h2>
             <h3 className="card-title"> ${precio} </h3>
-            <h4 className="card-text">Unidades disponibles {stock}</h4>
+            <h4 className="card-text">Units available {stock}</h4>
             <br></br>
             {amount === 0 ? (
               <ItemCount onAdd={onAdd} stock={stock} inicial={beginning} />
             ) : (
+              <Link to="/Cart/Content">
               <Button variant="success">Finalize purchase</Button>
+              </Link>
             )}
           </div>
         </div>

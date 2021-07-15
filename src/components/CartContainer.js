@@ -1,15 +1,15 @@
-import React, { Fragment, useState,useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { UseCart } from "../Context/CartContext";
 import Cart from "./Cart";
 import section from "../assets/carrito_ecommerce.jpg";
 import "../components/Styles.css";
-import Alert from 'react-bootstrap/Alert'
+import Alert from "react-bootstrap/Alert";
 //
 import firebase from "firebase/app";
 import { getFireStore } from "../Firebase/Firebase";
 
 function CartContainer() {
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false);
   const [datos, setDatos] = useState({
     nombre: "",
     apellido: "",
@@ -36,7 +36,6 @@ function CartContainer() {
       .add(newOrder)
       .then(({ id }) => {})
       .catch((e) => {
-        console.log(e);
       })
       .finally(setSuccess(true));
   }
@@ -53,12 +52,11 @@ function CartContainer() {
     event.preventDefault();
     console.log("enviando datos..." + datos.nombre + " " + datos.apellido);
   };
-  console.log(cart);
-  console.log(price);
+
   useEffect(() => {
-   Total(cart);
-  }, [cart.length])
-  
+    Total(cart);
+  }, [cart.length]);
+
   return (
     <>
       <img
@@ -73,7 +71,7 @@ function CartContainer() {
             <table className="table table-striped table-dark">
               <thead>
                 <tr>
-                  <th colSpan="2">Precio total</th>
+                  <th colSpan="2">Total price</th>
                   <th colSpan="2">${price} </th>
                 </tr>
                 <tr>
@@ -93,19 +91,24 @@ function CartContainer() {
                       image={itemCart.image}
                       id={itemCart.id}
                       indice={index}
-                      cart= {cart}
+                      cart={cart}
                     />
                   );
                 })}
               </tbody>
             </table>
             <Fragment>
-              <h1>Formulario</h1>
+              <h1 style={{
+              color: "black",
+              fontFamily: "fantasy",
+              fontStyle: "italic",
+              fontSize: "50px",
+            }}>Form</h1>
               <form className="row" onSubmit={enviarDatos}>
                 <div className="col-md-3">
                   <input
                     type="text"
-                    placeholder="Nombre"
+                    placeholder="Name"
                     className="form-control"
                     onChange={handleInputChange}
                     name="nombre"
@@ -115,7 +118,7 @@ function CartContainer() {
                 <div className="col-md-3">
                   <input
                     type="text"
-                    placeholder="Apellido"
+                    placeholder="Surname"
                     className="form-control"
                     onChange={handleInputChange}
                     name="apellido"
@@ -124,7 +127,7 @@ function CartContainer() {
                 </div>
                 <div className="col-md-3">
                   <input
-                    type="email"
+                    type="e-mail"
                     placeholder="email"
                     className="form-control"
                     onChange={handleInputChange}
@@ -135,38 +138,43 @@ function CartContainer() {
                 <div className="col-md-3">
                   <input
                     type="number"
-                    placeholder="edad"
+                    placeholder="Age"
                     className="form-control"
                     onChange={handleInputChange}
                     name="edad"
                     required
                   ></input>
                 </div>
-                {success ? 
+                {success ? (
                   <div className="container">
                     <div className="row justify-content-md-center">
-                    <Alert variant="success">
-                      <Alert.Heading>Your purchase was successful</Alert.Heading>
-                    </Alert>
+                      <Alert variant="success">
+                        <Alert.Heading>
+                          Your purchase was successful
+                        </Alert.Heading>
+                      </Alert>
                     </div>
                   </div>
-                  : 
-                <>
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={() => eraseEverything()}
-                >
-                  Erase everything
-                </button>
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={() => sendOrder()}
-                >
-                  To buy
-                </button>
-                </>}
+                ) : (
+                  <div className="container">
+                    <div className="row justify-content-md-center">
+                      <button
+                        type="submit"
+                        className="btn btn-danger btn-lg btn-block"
+                        onClick={() => eraseEverything()}
+                      >
+                        Clean up carro
+                      </button>
+                      <button
+                        type="submit"
+                        className="btn btn-success btn-lg btn-block"
+                        onClick={() => sendOrder()}
+                      >
+                        Confirm purchase
+                      </button>
+                    </div>
+                  </div>
+                )}
               </form>
             </Fragment>
           </div>
