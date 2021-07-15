@@ -3,7 +3,6 @@ import { UseCart } from "../Context/CartContext";
 import Button from "react-bootstrap/Button";
 
 function Cart({ name, amount, image, id, indice }) {
-  //const { cart } = UseCart();
   const { deleteItem } = UseCart();
 
   return (

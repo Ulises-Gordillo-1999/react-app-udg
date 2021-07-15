@@ -9,6 +9,7 @@ import firebase from "firebase/app";
 import { getFireStore } from "../Firebase/Firebase";
 
 function CartContainer() {
+  const [id, setId] = useState()
   const [success, setSuccess] = useState(false);
   const [datos, setDatos] = useState({
     nombre: "",
@@ -34,7 +35,7 @@ function CartContainer() {
   function sendOrder() {
     ordersCollection
       .add(newOrder)
-      .then(({ id }) => {})
+      .then(({ id }) => {setId(id)})
       .catch((e) => {
       })
       .finally(setSuccess(true));
@@ -150,7 +151,8 @@ function CartContainer() {
                     <div className="row justify-content-md-center">
                       <Alert variant="success">
                         <Alert.Heading>
-                          Your purchase was successful
+                          Your purchase was successful <hr></hr>
+                          Su orden de compra es:<br></br> {id}
                         </Alert.Heading>
                       </Alert>
                     </div>

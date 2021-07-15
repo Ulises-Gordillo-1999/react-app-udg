@@ -2,10 +2,7 @@ import React from "react";
 import "./App.css";
 //import FetchPokeApi from "./components/FetchPokeApi";
 import AppRouter from "./routers/AppRouter";
-//import "bootstrap/dist/css/bootstrap.min.css";
 import { CartProvider } from "./Context/CartContext";
-//Firebase
-//import "@firebase/firestore"
 
 function App() {
   return (
