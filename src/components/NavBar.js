@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { BsHouseDoorFill } from "react-icons/bs";
 import { BsFillDisplayFill } from "react-icons/bs";
-import { AiFillCamera } from "react-icons/ai";
 import { BsPuzzleFill } from "react-icons/bs";
+import { FaKeyboard} from "react-icons/fa";
 
 export default function NavBar() {
   const { cart } = UseCart();
@@ -46,7 +46,7 @@ export default function NavBar() {
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/Categories/cameras_accessories">
               Accessories
-              <AiFillCamera />
+              <FaKeyboard/>
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
